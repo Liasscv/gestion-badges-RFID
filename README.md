@@ -20,4 +20,3 @@ Accède à une interface de gestion avancée pour gérer les badges, utilisateur
 
 Chaque action, présentation de badge, ouverture de porte, autorisation manuelle, changement de mode, etc. est enregistrée dans une base SQL sécurisée, assurant la traçabilité et la sécurité des accès.
 
-a
