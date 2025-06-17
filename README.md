@@ -25,13 +25,14 @@ Une interface admin permet de gérer les utilisateurs, consulter les historiques
 
 ## Diagrammes UML
 
-![Diagramme d'architecture du projet](Diagrammes UML/DiagrammeDeDeploiement.png)
+![Diagramme d'architecture du projet](Diagrammes%20UML/DiagrammeDeDeploiement.png)
+
 *Diagramme de déploiement du système RFID.*
 
 
 ### Diagramme de cas d'utilisation
 
-![Diagramme de cas d'utilisation](Diagrammes UML/DiagrammeCasd_utilisation.png)
+![Diagramme de cas d'utilisation](Diagrammes%20UML/DiagrammeCasd_utilisation.png)
 *Diagramme UML principal, visualisant les cas d'usage du système.*
 
 ## Technologies utilisées
