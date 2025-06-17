@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrôle Barionet 50</title>
+    <link rel="stylesheet" href="">
+    <style>
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+
+    <script>
+        // Récupère l'adresse IP saisie par l'utilisateur
+        function getBarionetIP() {
+            return document.getElementById('ipAddress').value;
+        }
+
+        // Contrôle une sortie (ON, OFF)
+        function controlOutput(output, value) {
+            const ip = getBarionetIP(); // Récupère l'adresse IP
+            const url = "http://".concat(ip, "/rc.cgi?o=", output, ",", value);
+            fetch(url) // Envoie la requête HTTP
+                .then(response => {
+                    if (response.ok) {
+                        showStatus(`Commande envoyée : Sortie ${output} - Valeur ${value}`, 'success');
+                    } else {
+                        showStatus('Erreur lors de l\'envoi de la commande', 'error');
+                    }
+                })
+                .catch(error => {
+                    showStatus('Erreur de communication', 'error');
+                    console.error('Erreur:', error);
+                });
+        }      
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Contrôle Barionet 50</h1>
+
+        <!-- Section pour configurer l'adresse IP du Barionet -->
+        <div class="config-section">
+            <div class="input-group">
+                <label for="ipAddress">Adresse IP:</label>
+                <input type="text" id="ipAddress" value="172.22.21.164"> <!-- Champ pour entrer l'adresse IP -->
+            </div>
+        </div>
+
+        <!-- Section pour contrôler les sorties du Barionet -->
+        <div class="section">
+            <h2>Contrôle des sorties</h2>
+            <div class="controls">
+                <!-- Contrôle de la sortie 1 -->
+                <div class="output-group">
+					
+                    <h3>Commande AGENT</h3>
+					<button onclick="controlOutput(1, 10)" class="btn on">OUVRIR</button> <!-- Activer la sortie -->
+                </div>
+
+                <!-- Contrôle de la sortie 2 -->
+                <div class="output-group">
+                    <h3>Modes de fonctionnement</h3>
+                    <button onclick="controlOutput(2, 0)" class="btn on">Badge ou Agent</button>
+                    <button onclick="controlOutput(2, 1)" class="btn off">Mode Auto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

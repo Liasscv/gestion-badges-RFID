@@ -1,0 +1,9 @@
+# Interdire l'affichage du contenu des répertoires
+Options -Indexes
+
+# Activer le module de réécriture
+RewriteEngine On
+
+# Bloquer l'accès direct au dossier Agent
+RewriteRule ^(.)$ /Interfaces_Web/Index.html[L,R=301]
+
