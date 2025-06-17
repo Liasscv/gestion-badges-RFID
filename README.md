@@ -61,6 +61,6 @@ Une interface admin permet de gérer les utilisateurs, consulter les historiques
 Projet réalisé par Elias COSME VINOU Romain METAIS et Akouman DIANGO pour le projet Accès Lycée dans le cadre du BTS CIEL option Informatique et Réseaux, session 2024-2025.
 
 
-a
+
 
 
