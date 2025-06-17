@@ -1,22 +1,65 @@
-Gestion d'accès par badge RFID
-Bienvenue sur ce projet pédagogique de gestion d’accès sécurisé par badge RFID, réalisé dans le cadre du BTS CIEL, option Informatique et Réseaux.
+# Gestion d'accès par Badge RFID
 
-L'objectif est de développer et démontrer une solution complète de contrôle d’accès, de supervision vidéo, de traçabilité et de gestion centralisée, en réponse aux besoins d’un établissement scolaire type lycée.
+Projet pédagogique pour la gestion d'accès sécurisée par badge RFID, réalisé dans le cadre du BTS CIEL option Informatique et Réseau.
 
-Fonctionnement général
-Le système permet à chaque utilisateur (élève, visiteur, personnel) d’être identifié grâce à un badge RFID, dont la validation donne accès à des zones sécurisées.
-Le module Barionet100 se charge d’actionner l’ouverture des portes ou autres dispositifs, sur ordre du serveur, tout en assurant la compatibilité avec les capteurs et actionneurs existants.
+## Présentation générale
 
-L'ensemble du matériel — lecteurs RFID (Inveo, Minova), caméra IP pour la supervision en temps réel, postes d’accueil, Barionet, serveur informatique — est interconnecté via le réseau Ethernet du lycée afin de garantir instantanéité et sécurité.
+Ce projet offre une solution centralisée de contrôle d'accès, de supervision vidéo, de traçabilité et de gestion des événements pour un établissement scolaire type lycée. Les modules matériels et logiciels facilitent l'attribution des droits, la gestion des accès et la supervision en temps réel.
 
-Interface web et rôles
-Le serveur central héberge l’interface web d’administration développée en PHP/MySQL.
+## Fonctionnalités principales
 
-Agent d’accueil :
-Dispose d’un tableau de bord dédié permettant de visualiser en direct le flux caméra pour identifier les visiteurs, autoriser ou refuser un accès manuellement, ou encore consulter l’historique des entrées et sorties.
+**Gestion des utilisateurs et des rôles**
+Les utilisateurs (élèves, visiteurs, personnel) disposent de badges RFID. Chaque badge donne accès à des zones sécurisées selon le profil attribué.
 
-Technicien :
-Accède à une interface de gestion avancée pour gérer les badges, utilisateurs et droits, configurer le matériel réseau (adresses IP, modes de fonctionnement automatisés ou manuels), et superviser en détail tous les événements et états du système.
+**Supervision en temps réel**
+Le système permet un contrôle instantané de l'état des accès, la gestion des autorisations, la validation des passages, et la gestion manuelle des accès exceptionnels.
 
-Chaque action, présentation de badge, ouverture de porte, autorisation manuelle, changement de mode, etc. est enregistrée dans une base SQL sécurisée, assurant la traçabilité et la sécurité des accès.
+**Traçabilité et historique des accès**
+Tous les événements sont enregistrés dans une base de données SQL sécurisée, assurant la traçabilité complète des accès.
+
+**Compatibilité matérielle**
+Le module communique avec des lecteurs RFID (exemple : Invéo, Miwa, HID) et intègre la supervision de dispositifs tiers (caméras, portes...).
+
+**Administration via interface web**
+Une interface admin permet de gérer les utilisateurs, consulter les historiques et paramétrer le matériel (adresses IP, modes automatiques/manuels, accès caméras...).
+
+## Diagrammes UML
+
+![Diagramme d'architecture du projet](Diagrammes UML/DiagrammeDeDeploiement.png)
+*Diagramme de déploiement du système RFID.*
+
+
+### Diagramme de cas d'utilisation
+
+![Diagramme de cas d'utilisation](Diagrammes UML/DiagrammeCasd_utilisation.png)
+*Diagramme UML principal, visualisant les cas d'usage du système.*
+
+## Technologies utilisées
+
+- PHP / MySQL (pour l’API Web et la Base de données)
+- HTML / CSS / JavaScript (pour l'interface d’administration)
+- Matériel RFID (lecteurs Invéo, Miwa, HID, serveurs Barionet)
+- Caméras IP (pour la supervision vidéo)
+
+## Installation et déploiement
+
+1. Cloner le dépôt sur le serveur ou poste de travail.
+2. Installer les dépendances nécessaires (voir doc technique dans `Documentation MCR04`).
+3. Configurer la base de données (importer le fichier SQL et adapter l’accès dans les fichiers de config).
+4. Démarrer les services RFID et l’interface web.
+
+## Utilisation
+
+1. Connecter le matériel RFID et s’assurer que le système communique bien avec la base de données.
+2. Accéder à l’interface d'administration pour enregistrer les utilisateurs et leur attribuer un badge.
+3. Consulter les logs des accès via l’interface admin.
+4. Superviser l’état des portes, des accès et des caméras en temps réel.
+
+## Crédits
+
+Projet réalisé par Elias COSME VINOU Romain METAIS et Akouman DIANGO pour le projet Accès Lycéee dans le cadre du BTS CIEL option Informatique et Réseaux, session 2024-2025.
+
+
+
+
 
